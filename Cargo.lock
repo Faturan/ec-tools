@@ -70,7 +70,7 @@ dependencies = [
 name = "ec-tools"
 version = "0.1.0"
 dependencies = [
- "jerasure-rs",
+ "jerasure-sys",
 ]
 
 [[package]]
@@ -86,9 +86,9 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "d2fabcfbdc87f4758337ca535fb41a6d701b65693ce38287d856d1674551ec9b"
 
 [[package]]
-name = "jerasure-rs"
+name = "jerasure-sys"
 version = "0.1.0"
-source = "git+https://github.com/Faturan/jerasure-rs#f0b8bd3de6cc1ac8d23def82ff7b9bf81ee5f305"
+source = "git+https://github.com/Faturan/jerasure-sys#481e6f3a5dea18e34e18474fbcb76e0f618f707c"
 dependencies = [
  "bindgen",
 ]
