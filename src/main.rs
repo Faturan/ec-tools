@@ -15,11 +15,12 @@ fn gmult(a: i32, b: i32, w: i32) -> i32 {
 
 fn reed_sol_vandermonde_coding_matrix(k: usize, m: usize, w: usize) -> Vec<i32> {
     let mut matrix = Vec::new();
-    matrix.reserve(k*m);
+    matrix.reserve(k * m);
 
     unsafe {
-        let matrix_ptr = jerasure_sys::reed_sol_vandermonde_coding_matrix(k as i32, m as i32, w as i32);
-        let matrix_slice = slice::from_raw_parts(matrix_ptr, k*m);
+        let matrix_ptr =
+            jerasure_sys::reed_sol_vandermonde_coding_matrix(k as i32, m as i32, w as i32);
+        let matrix_slice = slice::from_raw_parts(matrix_ptr, k * m);
         matrix.extend_from_slice(matrix_slice);
         jerasure_sys::free(matrix_ptr as *mut c_void);
     }
